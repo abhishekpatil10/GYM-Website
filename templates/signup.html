@@ -1,0 +1,26 @@
+  <link href="{{ url_for('static',filename='signupstyle.css') }}" rel='stylesheet' type='text/css'>
+</link>
+<link rel="stylesheet" media="screen" href ="static/bootstrap.min.css">
+<link rel="stylesheet" href="static/bootstrap-theme.min.css">
+<meta name="viewport" content = "width=device-width,initial-scale=1.0">
+<div id="login-box">
+  <div class="left">
+    <h1>Sign up</h1>
+   <form> 
+    <input type="text" name="name" placeholder="Username" required />
+    <input type="text" name="email" placeholder="E-mail" required />
+    <input type="password" name="password" placeholder="Password" required />
+  
+    <a href="pg3.html" ><input type="submit" name="signup_submit" value="Sign me up" /></a>
+  </form>
+  </div>
+  
+  <div class="right">
+    <span class="loginwith">Sign in with<br />social network</span>
+    
+    <button class="social-signin facebook" onclick="location.href='https://www.facebook.com/login/';">Log in with facebook</button>
+    <button class="social-signin twitter" onclick="location.href='https://twitter.com/login?lang=en';">Log in with Twitter</button>
+    <button class="social-signin google" onclick="location.href='https://accounts.google.com/signin';">Log in with Google</button>
+  </div>
+  <div class="or">OR</div>
+</div>

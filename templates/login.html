@@ -1,0 +1,58 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    <!-- <title>Glowing Button on Hover</title> -->
+      <link href="{{ url_for('static',filename='style1.css') }}" rel='stylesheet' type='text/css'>
+</link>
+<link rel="stylesheet" media="screen" href ="static/bootstrap.min.css">
+<link rel="stylesheet" href="static/bootstrap-theme.min.css">
+<meta name="viewport" content = "width=device-width,initial-scale=1.0">
+
+  </head>
+ <body>
+
+<hr/>
+
+
+  <h2 align="center">ADMIN LOGIN</h2>
+      
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+      <center>
+      <form action = "{{ request.path }}" method = "post" name = "admin" role="form" onsubmit="return validateForm()">
+      <div class="form-group">
+         <label for = "username">Username:</label>
+         <input class="form-control" type = "text" name = "username" placeholder = "Username" /><br>
+
+         <label for = "password">Password:</label>
+         <input class="form-control" type = "password" name = "password" placeholder = "Password" /><br>
+
+         <input class="btn btn-success" type = "submit" value = "Submit" />
+      </div>
+      <br>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+ 
+        {% for message in messages %}
+            {% if "Error" not in message[1]: %}
+                <div class="alert alert-info">
+                <strong>Success! </strong> {{ message[1] }}
+                </div>
+            {% endif %}
+ 
+            {% if "Error" in message[1]: %}
+                <div class="alert alert-warning">
+                {{ message[1] }}
+                </div>
+            {% endif %}
+        {% endfor %}
+            {% endif %}
+        {% endwith %}
+      </form>
+      </center>
+</body>
+</html>

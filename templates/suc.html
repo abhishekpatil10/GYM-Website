@@ -1,0 +1,33 @@
+<form method="get" action="/">
+    <button type="submit">LogOut</button>
+</form>
+<h1>LOGIN SUCCESSFULLY</h1>
+
+
+<hr>
+<table border=1>
+         <thead>
+            <tr>
+               <th>name</th>
+               <th>lastname</th>
+               <th>country</th>
+               <th>subject</th>
+
+              
+            </tr>
+         </thead>
+         
+         <tbody>
+            {% for student in Contacts %}
+               <tr>
+                 
+                  <td>{{ student.name }}</td>
+                  <td>{{ student.lastname }}</td>
+                  <td>{{ student.country }}</td>
+                  <td>{{ student.subject }}</td>
+               
+               </tr>
+            
+            {% endfor %}
+         </tbody>
+      </table>
